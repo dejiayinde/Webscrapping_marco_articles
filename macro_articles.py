@@ -35,22 +35,22 @@ def headshot_href(link):
     try:
         headshot = link.find('div', class_='headshot').img.get('src')
         return headshot
-    except AttributeError:
-        return '-'
+    except AttributeError as e:
+        return e
             
 def fullname(link):
     try:
         fullname = link.find('div', class_='full-name').text.strip('\n')
         return fullname
-    except AttributeError:
-        return '-'
+    except AttributeError as e:
+        return e
     
 def twitter_handle(link):
     try:
         twitter = link.find('div', class_='twitter-handle').text.strip('\n')
         return twitter
-    except AttributeError:
-        return '-'
+    except AttributeError as e:
+        return e
 
 def content_body(link):
     return link.find('article')
