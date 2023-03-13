@@ -11,12 +11,12 @@ jobs:
       - name: test env and var
         run: |
           echo "using env context - my name is ${{ env.name }} and living in ${{ env.town }}"
-          echo "using vars context GITHUB_ACTION - ${{ vars.GITHUB_ACTION }}"
-          echo "using vars context GITHUB_ACTOR - ${{ vars.GITHUB_ACTOR }}"
-          echo "using vars context GITHUB_BASE_REF - ${{ vars.GITHUB_BASE_REF }}"
-          echo "using vars context GITHUB_ENV - ${{ vars.GITHUB_ENV}}"
-          echo "using vars context GITHUB_EVENT_NAME - ${{ vars.GITHUB_EVENT_NAME }}"
-          echo "using vars context GITHUB_PATH - ${{ vars.GITHUB_PATH }}"
+          echo "using vars context GITHUB_ACTION - ${{ github.GITHUB_ACTION }}"
+          echo "using vars context GITHUB_ACTOR - ${{ github.GITHUB_ACTOR }}"
+          echo "using vars context GITHUB_BASE_REF - ${{ github.GITHUB_BASE_REF }}"
+          echo "using vars context GITHUB_ENV - ${{ github.GITHUB_ENV}}"
+          echo "using vars context GITHUB_EVENT_NAME - ${{ github.GITHUB_EVENT_NAME }}"
+          echo "using vars context GITHUB_PATH - ${{ github.GITHUB_PATH }}"
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
